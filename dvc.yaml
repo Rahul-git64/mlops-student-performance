@@ -1,0 +1,15 @@
+# DVC Pipeline Stage Definition
+stages:
+  train:
+    cmd: python train.py
+    deps:
+      - data/student_dataset.csv
+      - train.py
+      - params.yaml
+    outs:
+      - models/student_model.pkl
+      - models/student_scaler.pkl
+      - models/student_label_encoder.pkl
+      - models/feature_columns.pkl
+      - models/feature_encoders.pkl
+      - outputs/confusion_matrix.png
