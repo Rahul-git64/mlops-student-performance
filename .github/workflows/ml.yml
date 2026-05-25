@@ -36,7 +36,7 @@ jobs:
         run: |
           dvc init --no-scm
           dvc remote add -d s3remote s3://mlops-student-performance
-          dvc pull
+          dvc pull data/student_dataset.csv.dvc
 
       - name: Run DVC Pipeline (Trains Model)
         run: dvc repro --force
